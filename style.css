@@ -37,6 +37,7 @@ header {
     gap: 16px;
     color: var(--secundary-color);
     font-size: 2rem;
+    font-family: 'Righteous', cursive;
 
 }
 
@@ -48,9 +49,9 @@ main {
 .pikachu-image{
     position: absolute;
     z-index: 1;
-    top:50;
-    left: 50;
-    transform: translate(-50, -50);
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .title {
@@ -75,7 +76,7 @@ main {
     color: #ffffff55;
 
 }
-.description{
+.description__text{
     grid-column: 1/7;
     place-self: center start;
 }
@@ -106,4 +107,55 @@ main {
 footer {
 text-align: center;
 color: var(--secundary-color);
+}
+
+
+@media (max-width:960px) {
+    :root{
+        --space-default: 30px;
+    }
+    main {
+    grid-template-columns: repeat 1fr; }
+    .pikachu-image {
+        transform: translate(-50%, -60%);
+    }
+    .title{
+        place-self: start center;
+    }
+    .description {
+        grid-row: 2/3;
+        grid-column: -1/1;
+        place-self: center;
+        text-algin: center;
+
+    }
+    .action{
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        place-self: end center;
+
+    }
+    footer{
+        display: none;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .pikachu-image {
+        width: 90vw;
+        transform: translate(-50%, -60%)
+    }
+    .title{
+        transform: translateY(10%);
+    }
+    .description__title{
+        font-size: 10vw;
+    }
+    .description__text {
+        display: none;
+    }
+    .action{
+        width: 100%;
+    }
 }
